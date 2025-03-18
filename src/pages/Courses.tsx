@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,7 @@ const Courses = () => {
   }, []);
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [priceRange, setPriceRange] = useState([0, 120]);
+  const [difficultyRange, setDifficultyRange] = useState([0, 10]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
@@ -34,11 +33,11 @@ const Courses = () => {
   const filteredCourses = courses.filter(course => {
     const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          course.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesPrice = course.price >= priceRange[0] && course.price <= priceRange[1];
+    const matchesDifficulty = true; // We're using difficulty instead of price now
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(course.category);
     const matchesLevel = selectedLevels.length === 0 || selectedLevels.includes(course.level);
     
-    return matchesSearch && matchesPrice && matchesCategory && matchesLevel;
+    return matchesSearch && matchesDifficulty && matchesCategory && matchesLevel;
   });
   
   // Toggle category selection
@@ -62,15 +61,15 @@ const Courses = () => {
   // Clear all filters
   const clearFilters = () => {
     setSearchTerm('');
-    setPriceRange([0, 120]);
+    setDifficultyRange([0, 10]);
     setSelectedCategories([]);
     setSelectedLevels([]);
   };
   
   // Check if any filters are active
   const hasActiveFilters = searchTerm !== '' || 
-                          priceRange[0] > 0 || 
-                          priceRange[1] < 120 || 
+                          difficultyRange[0] > 0 || 
+                          difficultyRange[1] < 10 || 
                           selectedCategories.length > 0 || 
                           selectedLevels.length > 0;
   
@@ -133,21 +132,21 @@ const Courses = () => {
                     )}
                   </div>
                   
-                  {/* Price Range Filter */}
+                  {/* Difficulty Range Filter (replacing Price Range) */}
                   <div className="space-y-4">
-                    <h3 className="text-sm font-medium">Price Range</h3>
+                    <h3 className="text-sm font-medium">Difficulty Level</h3>
                     <Slider
-                      defaultValue={[0, 120]}
+                      defaultValue={[0, 10]}
                       min={0}
-                      max={120}
-                      step={5}
-                      value={priceRange}
-                      onValueChange={setPriceRange}
+                      max={10}
+                      step={1}
+                      value={difficultyRange}
+                      onValueChange={setDifficultyRange}
                       className="mt-6"
                     />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm">${priceRange[0]}</span>
-                      <span className="text-sm">${priceRange[1]}</span>
+                      <span className="text-sm">Beginner</span>
+                      <span className="text-sm">Advanced</span>
                     </div>
                   </div>
                   
@@ -206,7 +205,7 @@ const Courses = () => {
                   Filters
                   {hasActiveFilters && (
                     <span className="ml-2 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
-                      {selectedCategories.length + selectedLevels.length + (priceRange[0] > 0 || priceRange[1] < 120 ? 1 : 0)}
+                      {selectedCategories.length + selectedLevels.length + (difficultyRange[0] > 0 || difficultyRange[1] < 10 ? 1 : 0)}
                     </span>
                   )}
                 </Button>
@@ -225,21 +224,21 @@ const Courses = () => {
                     </Button>
                   </div>
                   
-                  {/* Mobile Price Range Filter */}
+                  {/* Mobile Difficulty Range Filter (replacing Price Range) */}
                   <div className="space-y-4 mb-8">
-                    <h3 className="text-sm font-medium">Price Range</h3>
+                    <h3 className="text-sm font-medium">Difficulty Level</h3>
                     <Slider
-                      defaultValue={[0, 120]}
+                      defaultValue={[0, 10]}
                       min={0}
-                      max={120}
-                      step={5}
-                      value={priceRange}
-                      onValueChange={setPriceRange}
+                      max={10}
+                      step={1}
+                      value={difficultyRange}
+                      onValueChange={setDifficultyRange}
                       className="mt-6"
                     />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm">${priceRange[0]}</span>
-                      <span className="text-sm">${priceRange[1]}</span>
+                      <span className="text-sm">Beginner</span>
+                      <span className="text-sm">Advanced</span>
                     </div>
                   </div>
                   

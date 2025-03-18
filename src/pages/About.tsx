@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -9,17 +8,15 @@ import { BookOpen, CheckCircle, Heart, BarChart3, Users, Trophy, GraduationCap, 
 
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import InstructorCard from '@/components/InstructorCard';
+import TeamMemberCard from '@/components/TeamMemberCard';
 
-import { instructors } from '@/data/sampleData';
+import { teamMembers } from '@/data/sampleData';
 
 const About = () => {
-  // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
-  // Mission & values
   const values = [
     {
       icon: BookOpen,
@@ -43,7 +40,6 @@ const About = () => {
     }
   ];
   
-  // Stats
   const stats = [
     { number: "100K+", label: "Students Worldwide" },
     { number: "200+", label: "Expert Instructors" },
@@ -51,35 +47,6 @@ const About = () => {
     { number: "50+", label: "Countries Reached" }
   ];
   
-  // Team members
-  const teamMembers = [
-    {
-      name: "Alexandra Lee",
-      title: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-      bio: "Former education consultant with a passion for making quality education accessible to everyone."
-    },
-    {
-      name: "Marcus Johnson",
-      title: "Chief Learning Officer",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      bio: "PhD in Educational Technology with 15 years of experience in curriculum development."
-    },
-    {
-      name: "Sophia Rodriguez",
-      title: "Head of Content",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80",
-      bio: "Former university professor specializing in creating engaging educational material."
-    },
-    {
-      name: "David Chen",
-      title: "CTO",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-      bio: "Tech innovator with a background in AI and a mission to enhance the learning experience through technology."
-    }
-  ];
-  
-  // Achievements
   const achievements = [
     {
       icon: Trophy,
@@ -118,7 +85,6 @@ const About = () => {
       <Navbar />
       
       <main className="flex-grow pt-16 md:pt-20">
-        {/* Hero Section */}
         <section className="bg-muted/30 py-16 md:py-24 border-b">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
@@ -134,7 +100,6 @@ const About = () => {
           </div>
         </section>
         
-        {/* About Tabs */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <Tabs defaultValue="mission" className="max-w-4xl mx-auto">
@@ -144,7 +109,6 @@ const About = () => {
                 <TabsTrigger value="achievements">Achievements</TabsTrigger>
               </TabsList>
               
-              {/* Mission & Values Tab */}
               <TabsContent value="mission" className="space-y-12">
                 <div className="text-center mb-16">
                   <h2 className="heading-3 mb-4">Our Mission & Values</h2>
@@ -153,7 +117,6 @@ const About = () => {
                   </p>
                 </div>
                 
-                {/* Values Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {values.map((value, idx) => (
                     <Card key={idx} className="overflow-hidden border shadow-sm">
@@ -170,7 +133,6 @@ const About = () => {
                   ))}
                 </div>
                 
-                {/* Stats */}
                 <div className="mt-16 py-12 px-6 bg-muted/30 rounded-xl border">
                   <div className="text-center mb-10">
                     <h3 className="heading-3">Our Impact</h3>
@@ -191,7 +153,6 @@ const About = () => {
                 </div>
               </TabsContent>
               
-              {/* Team Tab */}
               <TabsContent value="team" className="space-y-12">
                 <div className="text-center mb-16">
                   <h2 className="heading-3 mb-4">Meet Our Leadership</h2>
@@ -200,7 +161,6 @@ const About = () => {
                   </p>
                 </div>
                 
-                {/* Team Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {teamMembers.map((member, idx) => (
                     <Card key={idx} className="overflow-hidden border shadow-sm">
@@ -224,28 +184,22 @@ const About = () => {
                   ))}
                 </div>
                 
-                {/* Instructors Section */}
                 <div className="mt-16">
                   <div className="text-center mb-12">
-                    <h3 className="heading-3 mb-4">Our Top Instructors</h3>
+                    <h3 className="heading-3 mb-4">Our Core Team</h3>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                      Learn from industry experts who are passionate about sharing their knowledge and helping you succeed.
+                      Meet the talented developers who created this platform and are passionate about sharing knowledge with the world.
                     </p>
                   </div>
                   
                   <div className="grid grid-cols-1 gap-8">
-                    {instructors.map(instructor => (
-                      <InstructorCard key={instructor.id} instructor={instructor} />
+                    {teamMembers.map(member => (
+                      <TeamMemberCard key={member.id} member={member} />
                     ))}
-                  </div>
-                  
-                  <div className="text-center mt-10">
-                    <Button variant="outline" size="lg">View All Instructors</Button>
                   </div>
                 </div>
               </TabsContent>
               
-              {/* Achievements Tab */}
               <TabsContent value="achievements" className="space-y-12">
                 <div className="text-center mb-16">
                   <h2 className="heading-3 mb-4">Our Achievements</h2>
@@ -254,19 +208,16 @@ const About = () => {
                   </p>
                 </div>
                 
-                {/* Timeline */}
                 <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary/70 before:via-primary/50 before:to-primary/5 md:before:mx-auto md:before:right-0 md:before:left-0 md:space-y-0">
                   {achievements.map((achievement, idx) => (
                     <div key={idx} className={cn(
                       "relative flex flex-col md:flex-row md:justify-between md:items-center gap-6",
                       idx % 2 === 0 ? "md:flex-row-reverse" : ""
                     )}>
-                      {/* Timeline Circle */}
                       <div className="absolute left-5 md:left-1/2 md:transform md:-translate-x-1/2 h-10 w-10 rounded-full bg-white border-4 border-primary flex items-center justify-center">
                         <achievement.icon className="h-4 w-4 text-primary" />
                       </div>
                       
-                      {/* Content */}
                       <div className={cn(
                         "ml-16 md:ml-0 md:w-5/12",
                         idx % 2 === 0 ? "md:text-right" : "md:text-left"
@@ -284,7 +235,6 @@ const About = () => {
                         </Card>
                       </div>
                       
-                      {/* Add spacer div for alignment */}
                       <div className="hidden md:block md:w-5/12" />
                     </div>
                   ))}
@@ -294,7 +244,6 @@ const About = () => {
           </div>
         </section>
         
-        {/* Join Us Section */}
         <section className="py-16 md:py-24 bg-muted/30 border-t">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto bg-white rounded-xl border shadow-sm p-8 md:p-12">
@@ -327,24 +276,17 @@ const About = () => {
                 
                 <div className="space-y-6 flex flex-col justify-center">
                   <div className="p-5 rounded-lg bg-primary/5 border border-primary/10 relative">
-                    <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
-                      POPULAR
+                    <div className="text-center mb-4">
+                      <h4 className="font-semibold">Free Access</h4>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        All our resources and courses are completely free. No subscriptions, no hidden fees.
+                      </p>
                     </div>
-                    <div className="flex justify-between items-center mb-4">
-                      <h4 className="font-semibold">Yearly Membership</h4>
-                      <div className="text-right">
-                        <span className="text-2xl font-bold">$199</span>
-                        <span className="text-xs text-muted-foreground block">$16.58/month</span>
-                      </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Full access to all courses and features for an entire year.
-                    </p>
                     <Button size="lg" className="w-full">Get Started</Button>
                   </div>
                   
                   <div className="text-center text-sm text-muted-foreground">
-                    Not ready to commit? Try our <Link to="#" className="text-primary font-medium">7-day free trial</Link>
+                    Join our <Link to="#" className="text-primary font-medium">open-source community</Link> and contribute to our mission
                   </div>
                 </div>
               </div>
