@@ -1,6 +1,6 @@
 
 import { CourseProps } from "@/components/CourseCard";
-import { InstructorProps } from "@/components/InstructorCard";
+import { TeamMemberProps } from "@/components/TeamMemberCard";
 import { TestimonialProps } from "@/components/Testimonial";
 
 // Sample course data
@@ -10,12 +10,11 @@ export const courses: CourseProps[] = [
     title: "Complete Web Development Bootcamp",
     description: "Learn HTML, CSS, JavaScript, React, Node.js, and more with hands-on projects and real-world applications.",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    instructor: "Sarah Johnson",
+    creator: "Sarah Johnson",
     rating: 4.8,
     students: 15420,
     duration: "12 weeks",
     level: "Beginner",
-    price: 89.99,
     category: "Web Development",
     featured: true
   },
@@ -24,12 +23,11 @@ export const courses: CourseProps[] = [
     title: "Data Science & Machine Learning: Python",
     description: "Master data science, machine learning, and Python programming with real-world projects and hands-on exercises.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    instructor: "Michael Chen",
+    creator: "Michael Chen",
     rating: 4.9,
     students: 12840,
     duration: "10 weeks",
     level: "Intermediate",
-    price: 94.99,
     category: "Data Science"
   },
   {
@@ -37,12 +35,11 @@ export const courses: CourseProps[] = [
     title: "UI/UX Design: From Beginner to Professional",
     description: "Learn the principles of UI/UX design, prototyping, and user research with Figma, Adobe XD, and Sketch.",
     image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2036&q=80",
-    instructor: "Emma Rodriguez",
+    creator: "Emma Rodriguez",
     rating: 4.7,
     students: 9230,
     duration: "8 weeks",
     level: "Beginner",
-    price: 79.99,
     category: "Design"
   },
   {
@@ -50,12 +47,11 @@ export const courses: CourseProps[] = [
     title: "Advanced React & Redux: Enterprise Applications",
     description: "Build complex, scalable React applications with Redux state management, advanced patterns, and best practices.",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    instructor: "David Kim",
+    creator: "David Kim",
     rating: 4.9,
     students: 7840,
     duration: "8 weeks",
     level: "Advanced",
-    price: 109.99,
     category: "Web Development",
     featured: true
   },
@@ -64,12 +60,11 @@ export const courses: CourseProps[] = [
     title: "Digital Marketing Masterclass",
     description: "Master SEO, social media marketing, content strategy, email marketing, and analytics to grow your business online.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
-    instructor: "Jessica Williams",
+    creator: "Jessica Williams",
     rating: 4.6,
     students: 11250,
     duration: "6 weeks",
     level: "Beginner",
-    price: 69.99,
     category: "Marketing"
   },
   {
@@ -77,50 +72,60 @@ export const courses: CourseProps[] = [
     title: "iOS Development with Swift",
     description: "Learn iOS app development from scratch using Swift and Xcode. Build real-world apps and publish to the App Store.",
     image: "https://images.unsplash.com/photo-1570717173024-ec8081c8f8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    instructor: "Robert Zhang",
+    creator: "Robert Zhang",
     rating: 4.8,
     students: 6430,
     duration: "10 weeks",
     level: "Intermediate",
-    price: 99.99,
     category: "Mobile Development"
   }
 ];
 
-// Sample instructor data
-export const instructors: InstructorProps[] = [
+// Sample team member data
+export const teamMembers: TeamMemberProps[] = [
   {
     id: "1",
     name: "Sarah Johnson",
-    title: "Web Development Instructor",
+    title: "Lead Frontend Developer",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    bio: "Sarah is a full-stack developer with over 10 years of experience in the industry. She specializes in React, Node.js, and has worked with companies like Google and Facebook.",
-    coursesCount: 7,
-    studentsCount: 28500,
-    rating: 4.8,
+    bio: "Full-stack developer with 10+ years of experience specializing in React. Previously worked at Google and contributed to several open-source projects.",
+    projectsCount: 32,
+    githubStars: 1240,
+    contributionsCount: 2816,
     specialties: ["JavaScript", "React", "Node.js", "Full-Stack"]
   },
   {
     id: "2",
     name: "Michael Chen",
-    title: "Data Science Professor",
+    title: "ML & Data Science Lead",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    bio: "Michael holds a Ph.D. in Computer Science from MIT and has been teaching data science and machine learning for over 8 years. Previously led AI research at Tesla.",
-    coursesCount: 5,
-    studentsCount: 21300,
-    rating: 4.9,
+    bio: "PhD in Computer Science from MIT with expertise in ML and AI. Creator of multiple open-source ML libraries and passionate about democratizing AI education.",
+    projectsCount: 24,
+    githubStars: 3450,
+    contributionsCount: 1923,
     specialties: ["Python", "Machine Learning", "AI", "Data Analysis"]
   },
   {
     id: "3",
     name: "Emma Rodriguez",
-    title: "UI/UX Design Expert",
+    title: "UI/UX Designer & Developer",
     image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-    bio: "Emma is a lead designer with 12 years of experience in UI/UX design. She has worked with startups and Fortune 500 companies to create intuitive user experiences.",
-    coursesCount: 4,
-    studentsCount: 15800,
-    rating: 4.7,
-    specialties: ["UI Design", "UX Research", "Figma", "Design Systems"]
+    bio: "UI/UX designer with a coding background. Believes in beautiful, accessible designs paired with clean code. Contributor to several design systems.",
+    projectsCount: 45,
+    githubStars: 890,
+    contributionsCount: 1254,
+    specialties: ["UI Design", "UX Research", "Figma", "Frontend"]
+  },
+  {
+    id: "4",
+    name: "David Park",
+    title: "Backend & DevOps Engineer",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+    bio: "Backend specialist with expertise in scalable architectures. Passionate about CI/CD, containerization, and cloud infrastructure. AWS certified.",
+    projectsCount: 28,
+    githubStars: 2310,
+    contributionsCount: 3156,
+    specialties: ["Node.js", "Docker", "AWS", "Kubernetes"]
   }
 ];
 
@@ -150,7 +155,7 @@ export const testimonials: TestimonialProps[] = [
   },
   {
     id: "3",
-    content: "As someone looking to transition into UX design, this course gave me exactly what I needed. The instructor explains complex concepts in a way that's easy to understand.",
+    content: "As someone looking to transition into UX design, this course gave me exactly what I needed. The material is presented in a way that's easy to understand.",
     author: {
       name: "Thomas Garcia",
       title: "UX Designer",

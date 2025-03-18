@@ -10,12 +10,11 @@ export interface CourseProps {
   title: string;
   description: string;
   image: string;
-  instructor: string;
+  creator: string;
   rating: number;
   students: number;
   duration: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
-  price: number;
   category: string;
   featured?: boolean;
 }
@@ -77,9 +76,9 @@ const CourseCard = ({ course, className }: { course: CourseProps; className?: st
           </div>
         </div>
 
-        {/* Instructor */}
+        {/* Creator */}
         <p className="text-sm text-muted-foreground mb-3">
-          by <span className="font-medium">{course.instructor}</span>
+          by <span className="font-medium">{course.creator}</span>
         </p>
 
         {/* Description */}
@@ -104,9 +103,8 @@ const CourseCard = ({ course, className }: { course: CourseProps; className?: st
         </div>
       </CardContent>
 
-      <CardFooter className="p-5 pt-0 flex items-center justify-between">
-        <div className="text-lg font-bold">${course.price.toFixed(2)}</div>
-        <Button size="sm">Enroll Now</Button>
+      <CardFooter className="p-5 pt-0 flex items-center justify-end">
+        <Button size="sm">Start Learning</Button>
       </CardFooter>
     </Card>
   );

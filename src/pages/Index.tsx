@@ -3,16 +3,16 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, CheckCircle, Sparkles, GraduationCap, BookOpen, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, GraduationCap, BookOpen, Users, Code, Github } from "lucide-react";
 
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import CourseCard, { CourseProps } from '@/components/CourseCard';
-import InstructorCard from '@/components/InstructorCard';
+import TeamMemberCard from '@/components/TeamMemberCard';
 import Testimonial from '@/components/Testimonial';
 import Footer from '@/components/Footer';
 
-import { courses, instructors, testimonials } from '@/data/sampleData';
+import { courses, teamMembers, testimonials } from '@/data/sampleData';
 
 const Index = () => {
   // Scroll to top on component mount
@@ -36,7 +36,7 @@ const Index = () => {
     {
       icon: BookOpen,
       title: "Expert-Led Courses",
-      description: "Learn from industry professionals with years of practical experience"
+      description: "Learn from detailed courses created by industry professionals with years of practical experience"
     },
     {
       icon: Users,
@@ -45,24 +45,24 @@ const Index = () => {
     },
     {
       icon: GraduationCap,
-      title: "Recognized Certificates",
-      description: "Earn certificates that are recognized by leading companies worldwide"
+      title: "Practical Skills",
+      description: "Gain hands-on experience with projects and exercises that build real-world skills"
     },
     {
-      icon: Sparkles,
-      title: "Interactive Learning",
-      description: "Engage with hands-on projects, quizzes, and practical assignments"
+      icon: Code,
+      title: "Open Source",
+      description: "All our content is free and open source, developed collaboratively by the community"
     }
   ];
 
   // Benefits list
   const benefits = [
-    "Access to all courses with a single subscription",
+    "Access to all courses completely free",
     "Learn at your own pace with lifetime access",
-    "Direct interaction with instructors via live sessions",
     "Downloadable resources and course materials",
     "Regular updates with the latest industry trends",
-    "Mobile-friendly learning platform for on-the-go access"
+    "Mobile-friendly learning platform for on-the-go access",
+    "Opportunity to contribute to course content"
   ];
 
   // Featured courses (for now, just take the first 3)
@@ -138,30 +138,23 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Instructors Section */}
+        {/* Team Members Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center text-center mb-12">
               <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Meet Our Instructors
+                Meet Our Team
               </span>
-              <h2 className="heading-2 mb-4">Learn from the Best</h2>
+              <h2 className="heading-2 mb-4">The Developers Behind LumiED</h2>
               <p className="text-muted-foreground max-w-3xl">
-                Our instructors are industry leaders with years of practical experience in their respective fields.
+                Our team of talented developers is passionate about creating free, high-quality educational content for everyone.
               </p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {instructors.slice(0, 2).map(instructor => (
-                <InstructorCard key={instructor.id} instructor={instructor} />
+              {teamMembers.slice(0, 4).map(member => (
+                <TeamMemberCard key={member.id} member={member} />
               ))}
-            </div>
-            
-            <div className="flex justify-center mt-12">
-              <Button variant="outline" size="lg" className="group">
-                Meet all instructors
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Button>
             </div>
           </div>
         </section>
@@ -219,7 +212,7 @@ const Index = () => {
                 <div className="flex flex-col items-center text-center mb-8">
                   <h2 className="heading-2 mb-4">Ready to Start Your Learning Journey?</h2>
                   <p className="text-muted-foreground max-w-2xl">
-                    Join thousands of students worldwide and start learning the skills that will advance your career.
+                    Join thousands of students worldwide and start learning the skills that will advance your career - completely free.
                   </p>
                 </div>
                 
@@ -239,17 +232,16 @@ const Index = () => {
                   <div className="space-y-6 flex flex-col justify-center">
                     <div className="p-5 rounded-lg bg-primary/5 border border-primary/10">
                       <div className="flex justify-between items-center mb-4">
-                        <h4 className="font-semibold">Monthly Subscription</h4>
-                        <span className="text-2xl font-bold">$19.99</span>
+                        <h4 className="font-semibold">Join Our Community</h4>
                       </div>
                       <p className="text-sm text-muted-foreground mb-4">
-                        Full access to all courses and features. Cancel anytime.
+                        Get started now and access all courses completely free. No credit card required.
                       </p>
                       <Button size="lg" className="w-full">Get Started</Button>
                     </div>
                     
                     <div className="text-center text-sm text-muted-foreground">
-                      No credit card required. 7-day free trial available.
+                      Want to contribute? <Link to="#" className="text-primary font-medium">Learn how to get involved</Link>
                     </div>
                   </div>
                 </div>
