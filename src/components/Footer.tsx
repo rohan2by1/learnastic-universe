@@ -63,7 +63,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
               <BookOpen className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold">EduLearn</span>
+              <span className="text-xl font-bold">LumiED</span>
             </Link>
             
             <p className="text-muted-foreground text-sm max-w-xs">
@@ -142,7 +142,7 @@ const Footer = () => {
         <div className="pt-10 mt-10 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} EduLearn. All rights reserved.
+              © {currentYear} LumiED. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a href="#" className="text-xs text-muted-foreground hover:text-primary">

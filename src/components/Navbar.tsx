@@ -65,7 +65,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 focus-ring rounded-md">
             <BookOpen className="w-8 h-8 text-primary" />
-            <span className="text-xl font-bold">EduLearn</span>
+            <span className="text-xl font-bold">LumiED</span>
           </Link>
 
           {/* Desktop Navigation */}
