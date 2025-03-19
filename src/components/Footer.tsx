@@ -50,9 +50,9 @@ const Footer = () => {
   ];
   
   const contactInfo = [
-    { icon: Mail, text: "support@edulearn.com" },
-    { icon: Phone, text: "+1 (555) 123-4567" },
-    { icon: MapPin, text: "123 Education St, San Francisco, CA" },
+    { icon: Mail, text: "support@lumied.com" },
+    { icon: Phone, text: "+91 9382900937" },
+    { icon: MapPin, text: "KTTPS Township , Kolaghat, West Bengal" },
   ];
 
   return (

@@ -90,7 +90,7 @@ const About = () => {
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="heading-2 mb-6">Our Story</h1>
               <p className="text-lg text-muted-foreground mb-8 text-balance">
-                Founded in 2018, EduLearn was created with a simple mission: to make high-quality education accessible to everyone, regardless of geographic or financial constraints.
+                Founded in 2024, LumiED was created with a simple mission: to make high-quality education accessible to everyone, regardless of geographic or financial constraints.
               </p>
               <div className="flex justify-center space-x-4">
                 <Button size="lg">Join Our Team</Button>
@@ -256,7 +256,7 @@ const About = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold">Why Join EduLearn?</h3>
+                  <h3 className="text-xl font-semibold">Why Join LumiED?</h3>
                   <ul className="space-y-3">
                     {[
                       "Access to 500+ courses across various domains",
