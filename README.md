@@ -2,6 +2,7 @@
 
 ## Project info
 **URL**: https://github.com/rohan2by1/learnastic-universe
+
 **URL**: https://lovable.dev/projects/7205e716-d36e-4d71-b089-207a6cc62c3b
 
 **Use your preferred IDE**
